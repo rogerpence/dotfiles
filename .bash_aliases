@@ -12,13 +12,11 @@ alias cd..='cd ..'
 # Requires sudo apt-get xsel
 alias toclip='xsel -ib'
 
-# echo -n "$(pwd)" && echo -n '/' && ls *.box
 
 function fullname {
     (echo -n "$(pwd)" && echo -n '/' && ls $1)
     (echo -n "$(pwd)" && echo -n '/' && ls $1) | toclip
 }
-
 
 if [ -f ~/.bash_box_aliases ]; then
     . ~/.bash_box_aliases

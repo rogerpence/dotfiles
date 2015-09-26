@@ -1,2 +1,5 @@
 # Make command prompt green for VMs.
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\]\u@\h: \W\\$ \[$(tput sgr0)\]"
+
+alias restart-php-fpm='sudo service php5-fpm restart'
+alias restart-nginx='sudo service nginx restart'
