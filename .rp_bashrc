@@ -1,0 +1,25 @@
+# Add the following three lines to .bashrc to source this file.
+# if [ -f ~/.rp_bashrc ]; then
+#     . ~/.rp_bashrc
+# fi
+
+function path() {
+    # I found this tip here:
+    # http://www.cyberciti.biz/faq/howto-print-path-variable/
+
+    # IFS is Linux's field separator character. First, the previously-assigned
+    # separator is saved in 'old' and then ':' is assigned as the temporary
+    # separator. printf then obeys that separator and prints each path token
+    # as a separate line (using the "%s\n"). Before ending, the previously-assigned
+    # separator is restored.
+
+    old=$IFS
+    IFS=:
+    printf "%s\n" $PATH | sort | more
+    IFS=$old
+}
+
+alias lsdir='ls -alhF --color'
+alias treed='tree -d -A -L 6'
+alias cd..='cd ..'
+alias httpserver='python -m http.server'
